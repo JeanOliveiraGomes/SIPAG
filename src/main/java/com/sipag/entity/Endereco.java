@@ -13,7 +13,6 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 public class Endereco extends GenericEntity {
 
 	private static final long serialVersionUID = -8945666229445887747L;
@@ -38,5 +37,18 @@ public class Endereco extends GenericEntity {
 	public Endereco() {
 		super();
 	}
+
+
+	public Endereco(String cep, String lougradouro, String bairro, String cidade, EstadosEnum uf, String complemento) {
+		super();
+		this.cep = cep;
+		this.lougradouro = lougradouro;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.uf = uf;
+		this.complemento = complemento;
+	}
+	
+	
 
 }

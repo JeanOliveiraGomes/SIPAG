@@ -22,13 +22,14 @@ import lombok.Setter;
 @AllArgsConstructor
 public class EstabelecimentoDTO extends GenericEntity {
 	
+	private static final long serialVersionUID = 6848333200974204047L;
+
 	@Size(min = 20, max = 100)
 	private String nome;
 	
 	@Size(min = 14, max = 14)
 	private String cnpj;
 	
-	@OneToMany(cascade = CascadeType.ALL)
 	private List<Endereco> enderecos;
 	
 	private List<Email> email;
@@ -38,5 +39,6 @@ public class EstabelecimentoDTO extends GenericEntity {
 	public EstabelecimentoDTO() {
 		this.email = new ArrayList<>();
 		this.enderecos = new ArrayList<>();
+		this.telefone = new ArrayList<Telefone>();
 	}
 }
