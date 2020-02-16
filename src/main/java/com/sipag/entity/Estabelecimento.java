@@ -28,10 +28,11 @@ public class Estabelecimento extends GenericEntity {
 	@Column(nullable = false, unique = true)
 	private String nome;
 	
+	@Size(min = 14, max = 14)
 	@Column(nullable = false, length = 14)
 	private String cnpj;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.PERSIST)
 	@Column(nullable = false)
 	private List<Endereco> enderecos;
 	
