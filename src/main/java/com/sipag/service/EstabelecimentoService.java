@@ -25,6 +25,10 @@ public class EstabelecimentoService {
 		if (estabelecimento.getEnderecos().size() < 1) {
 			throw new Exception("Endereco Obrigatorio");
 		}
+		
+		if (estabelecimento.getTelefone().size() < 1) {
+			throw new Exception("Telefone Obrigatorio");
+		}
 		return DtoUtil.modelMapper.map(estabelecimentoRepository.save(estabelecimento), EstabelecimentoDTO.class);
 	}
 	

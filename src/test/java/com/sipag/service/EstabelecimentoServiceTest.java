@@ -16,7 +16,9 @@ import com.sipag.dto.EstabelecimentoDTO;
 import com.sipag.entity.Email;
 import com.sipag.entity.Endereco;
 import com.sipag.entity.Estabelecimento;
+import com.sipag.entity.Telefone;
 import com.sipag.enums.EstadosEnum;
+import com.sipag.enums.TipoTelefoneEnum;
 import com.sipag.repository.EstabelecimentoRepository;
 
 @RunWith(SpringRunner.class)
@@ -36,6 +38,12 @@ public class EstabelecimentoServiceTest {
 		List<Email> emails = new ArrayList<Email>();
 		emails.add(email);
 		
+		Telefone telefone = new Telefone();
+		telefone.setNumero("1115121212");
+		telefone.setTipo(TipoTelefoneEnum.CELULAR);
+		List<Telefone> telefones = new ArrayList<Telefone>();
+		telefones.add(telefone);
+		
 		
 		List<Endereco> enderecos = new ArrayList<Endereco>();
 		Endereco endereco = new Endereco();
@@ -51,6 +59,7 @@ public class EstabelecimentoServiceTest {
 		estabelecimento.setEmail(emails);
 		estabelecimento.setNome("NOME2 DO ESTABELECIMENTO VINTE CARACTERES");
 		estabelecimento.setEnderecos(enderecos);
+		estabelecimento.setTelefone(telefones);
 		
 		EstabelecimentoDTO dtoSalvo = estabelecimentoService.salvar(estabelecimento);
 		
@@ -69,6 +78,12 @@ public class EstabelecimentoServiceTest {
 		List<Email> emails = new ArrayList<Email>();
 		emails.add(email);
 		
+		Telefone telefone = new Telefone();
+		telefone.setNumero("1115121212");
+		telefone.setTipo(TipoTelefoneEnum.CELULAR);
+		List<Telefone> telefones = new ArrayList<Telefone>();
+		telefones.add(telefone);
+		
 		
 		List<Endereco> enderecos = new ArrayList<Endereco>();
 		Endereco endereco = new Endereco();
@@ -84,6 +99,7 @@ public class EstabelecimentoServiceTest {
 		estabelecimento.setEmail(emails);
 		estabelecimento.setNome("NOME DO ESTABELECIMENTO VINTE CARACTERES");
 		estabelecimento.setEnderecos(enderecos);
+		estabelecimento.setTelefone(telefones);
 		
 		EstabelecimentoDTO dtoSalvo = estabelecimentoService.salvar(estabelecimento);
 		assertNotNull(dtoSalvo);
@@ -94,11 +110,4 @@ public class EstabelecimentoServiceTest {
 	public void testFindAllSucesso() {
 		estabelecimentoService.findAll();
 	}
-	
-
-//	
-//	@Test
-//	public void testFindAllSucesso() {
-//		estabelecimentoService.findAll();
-//	}
 }

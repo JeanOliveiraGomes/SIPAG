@@ -17,7 +17,7 @@ public class Telefone extends GenericEntity {
 	private static final long serialVersionUID = -6234453410434578166L;
 	
 	@Column(nullable = false)
-	private Integer numero;
+	private String numero;
 	@Column(nullable = false)
 	private TipoTelefoneEnum tipo;
 	
