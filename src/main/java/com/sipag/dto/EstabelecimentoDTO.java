@@ -8,6 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Size;
 
+import com.sipag.entity.Email;
 import com.sipag.entity.Endereco;
 import com.sipag.util.GenericEntity;
 
@@ -24,12 +25,12 @@ public class EstabelecimentoDTO extends GenericEntity {
 	private String nome;
 	
 	@Size(min = 14, max = 14)
-	private Integer cnpj;
+	private String cnpj;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Endereco> enderecos;
 	
-	private List<String> email;
+	private List<Email> email;
 	
 	public EstabelecimentoDTO() {
 		this.email = new ArrayList<>();
