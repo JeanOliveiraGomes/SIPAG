@@ -12,6 +12,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Perfil implements GrantedAuthority {
 	
+	private static final long serialVersionUID = 6432880507603744085L;
+	
 	private String perfil;
 
 	@Override
