@@ -39,8 +39,14 @@ public class Estabelecimento extends GenericEntity {
 	@Column(nullable = false)
 	private List<Email> email;
 	
+	@OneToMany(cascade = CascadeType.PERSIST)
+	@Column(nullable = false)
+	private List<Telefone> telefone;
+	
+	
 	public Estabelecimento() {
 		this.email = new ArrayList<>();
 		this.enderecos = new ArrayList<>();
+		this.telefone = new ArrayList<Telefone>();
 	}
 }

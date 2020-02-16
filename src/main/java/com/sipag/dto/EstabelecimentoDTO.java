@@ -10,6 +10,7 @@ import javax.validation.constraints.Size;
 
 import com.sipag.entity.Email;
 import com.sipag.entity.Endereco;
+import com.sipag.entity.Telefone;
 import com.sipag.util.GenericEntity;
 
 import lombok.AllArgsConstructor;
@@ -31,6 +32,8 @@ public class EstabelecimentoDTO extends GenericEntity {
 	private List<Endereco> enderecos;
 	
 	private List<Email> email;
+	
+	private List<Telefone> telefone;
 	
 	public EstabelecimentoDTO() {
 		this.email = new ArrayList<>();
